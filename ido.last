@@ -1,0 +1,26 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/atanas/" . "#R_Projects/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ 
+)
+
+;; ----- ido-work-file-list -----
+(
+ 
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/atanas/#R_Projects/" (23861 11395 279939 107000) "PR_LPA/" "grc.pdf" "RQDA_test/" "WatsonR_0.0.1.2.tar.gz" ".Rproj.user/" "PR_qual/" "officeR/" "learnR/" "sandbox/" "LPA_options/" "LVMinR/" "PR_PhD/" "burgernomics/" "RdataCleaning/" "vsc_test/" "_text_book/" "Pr_Hons/" "FunctionalProgramming/" "tidyverse/" ".DS_Store" "grc2.pdf" "WatsonR/" "computerworld/" ".Rhistory" "../" "./")
+
+ ("/Users/atanas/" (24083 42268 377062 596000) ".composer/" "vendor/" "git/" ".gtk-bookmarks" ".viminfo" "composer.json" ".bash_history" ".onyx/" ".mume/" ".python-eggs/" ".gvimrc" ".gitconfig" ".aws/" "reveal.js/" ".cache/" ".python_history" "Downloads/" ".Renviron.d/" ".vim_backup/" ".aspnet/" ".Xauthority" ".vim_runtime/" ".sqlanywhere16/" ".gem/" ".dvdcss/" ".bash_profile" ".spss/" ".spacemacs" "Frameworks/" ".vscode/" ".mono/" ".TemporaryItems/" ".rstudio-desktop/" ".swt/" "dwhelper/" ".bluemix/" "Documents/" ".npm/" "~$search Consent Form, v2.0.0.docx" ".jupyter/" ".gitflow_export" ".Rprofile.bak.20190726-141634" ".Trash/" ".tor/" ".Rapp.history" "Dropbox/" ".Qsync/" ".qicon" ".freemind/" ".parallel/" ".ghc/" ".profile" "Applications/" ".vimrc" "Movies/" ".vim_mru_files" ".ssh/" ".dbeaver-drivers/" ".crv2013/" "#foo#" ".Rprofile.d/" "#python/" ".codeintel/" ".quicktype-vscode/" ".idlerc/" ".serverauth.1881" ".smb/" ".csl/" "package-lock.json" ".notable/" ".emacs.d.vanilla.bak/" ".dropbox/" "Public/" ".iterm2/" ".licenses/" ".perlbrew/" "Google Drive/" ".bash_sessions/" "zip/" "Sites/" ".emacs.d.ians.bak/" ".cups/" ".radian_history" ".gitignore_global" ".android/" ".emacs.d/" ".bash_profile.backup" ".sejda" "shallow-backup/" "Zotero/" ".profile2142372326" ".IdentityService/" "Calibre Library/" ".oracle_jre_usage/" "DOSBOX/" ".ePUBeedrmremoval/" "Qsync/" "Books/" ".lesshst" "Untitled-1.md" ".electron/" ".matplotlib/" ".mackup.cfg" "Library/" "Desktop/" ".ipython/" "OneDrive - University of Wollongong/" ".cpan/" ".boto" ".ePUBee/" ".MCTranscodingSDK/" "#StackOverflow/" ".rnd" ".vimrc_backup" ".bundle/" ".nvm/" ".notable.json" ".atom/" "source/" ".InstallAnywhere/" ".go/" ".pylint.d/" "Pictures/" ".local/" ".freeplane/" ".sqlworkbench/" ".templateengine/" ".pipupgrade/" "plugins/" ".emacs.d.space.bak/" ".cpanm/" ".vnc/" ".subversion/" ".cabal/" "my_bash_profile_cp.sh" ".rbenv/" "dist/" ".shallow-backup" "#R_Projects/" "bin/" ".tooling/" ".iterm2_shell_integration.bash" ".wget-hsts" ".hgignore_global" ".stCommitMsg" ".Rprofile" ".serverauth.19876" ".CFUserTextEncoding" ".yarnrc" ".sambox.cache" ".electron-gyp/" ".pdfbox.cache" "sw_vers" ".pandoc/" ".gnupg/" ".R/" ".DS_Store" "go/" ".gauth" ".489454.padl" ".ActivePerl/" ".vim/" "perl5/" ".node-gyp/" "Temp/" "bash.txt" ".gnupg_pre_2.1/" "composer.lock" "usr/" ".openshot_qt/" "Brains/" ".docker/" ".wine/" "DropboxHelperTools.old/" ".gitkraken/" ".kodi/" ".qualcoder/" "_R/" "Music/" ".config/" ".Renviron" ".eclipse/" ".Rhistory" ".stack/" ".quokka/" ".dbeaver4/" ".TheBrain/" "_exp/" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

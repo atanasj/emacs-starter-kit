@@ -13,6 +13,7 @@ The following packages will be downloaded and installed.
                                 'adaptive-wrap  
                                 'ag
                                 'anti-zenburn-theme
+                                'doom-themes ; add doom themes
                                 'org-ac
                                 'browse-kill-ring
                                 'company
@@ -53,6 +54,7 @@ The following packages will be downloaded and installed.
                                 'zenburn-theme
                                 'auctex
                                 'ess
+                                'ess-view ; add ess-view
                                 'r-autoyas                                
                                 )
     "Libraries that should be installed by default.")
