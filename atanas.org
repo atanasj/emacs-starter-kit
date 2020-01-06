@@ -194,11 +194,11 @@ Tell RefTeX where the bibliography files are.
 #+begin_src emacs-lisp    
     ;; Make RefTex able to find my local bib files
     (setq reftex-bibpath-environment-variables
-    '("/Users/kjhealy/Library/texmf/bibtex/bib"))
+    '("/Users/atanas/Library/texmf/bibtex/bib")) ; Not sure this works
 
     ;; Default bibliography
     (setq reftex-default-bibliography
-    '("/Users/kjhealy/Documents/bibs/socbib.bib"))
+    '("/Users/atanas/.pandoc/MyLib.bib")) ; update file path
 #+end_src
 
 *** Local vc commands
