@@ -543,7 +543,29 @@ Some last tweaks.
   )
 #+end_src
    
-   
+** Atanas' Custom elements 
+Some atanas tweaks. 
+
+#+srcname: atanas-custom
+#+begin_src emacs-lisp
+  ;; load drag-stuff
+  (require 'drag-stuff)
+  ;; set drag-stuff for global
+  (drag-stuff-global-mode 1)
+  ;; set the defaul kebindings
+  (drag-stuff-define-keys)  
+  ;; load all-the-icons
+  (require 'all-the-icons)
+  ;; load multiple-curors at startup
+  (require 'multiple-cursors)
+  ;; define 
+  ;; active region that spans multiple lines
+  (global-set-key (kbd "C-c C-c") 'mc/edit-lines)
+  ;; add multiple cursors not based on continuous lines, but based on keywords in  buffer
+  (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+  (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+  (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+#+end_src
    
    
    
