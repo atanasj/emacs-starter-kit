@@ -98,6 +98,9 @@ Bind full screen to `C-c f`.
 
 #+source: fullscreen-4
 #+begin_src emacs-lisp
+    ;; set maximised to borderless
+    ;; (set-frame-parameter nil 'fullscreen 'maximized)
+    ;; original function
     (defun fullscreen (&optional f)
       (interactive)
       (set-frame-parameter f 'fullscreen
@@ -543,7 +546,7 @@ Some last tweaks.
   )
 #+end_src
    
-** Atanas' Custom elements 
+* Atanas' Custom elements 
 Some atanas tweaks. 
 
 #+srcname: atanas-custom
@@ -554,22 +557,18 @@ Some atanas tweaks.
   (drag-stuff-global-mode 1)
   ;; set the defaul kebindings
   (drag-stuff-define-keys)  
+
   ;; load all-the-icons
   (require 'all-the-icons)
-  ;; load multiple-curors at startup
-  (require 'multiple-cursors)
-  ;; define 
-  ;; active region that spans multiple lines
-  (global-set-key (kbd "C-c C-c") 'mc/edit-lines)
-  ;; add multiple cursors not based on continuous lines, but based on keywords in  buffer
-  (global-set-key (kbd "C->") 'mc/mark-next-like-this)
-  (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-  (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-#+end_src
-   
-   
-   
-   
+
+  ;; more easily navigate and manage projects
+  ;; need to review for propoer keybindings
+  ;; load projectile
+  (require 'projectile)
+  (define-key projectile-mode-map (kbd "C-S-c p") 'projectile-command-map)
+  (projectile-mode +1) 
+    
+#+end_src   
 
 #+source: message-line
 #+begin_src emacs-lisp

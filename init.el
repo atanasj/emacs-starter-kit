@@ -49,10 +49,10 @@
 ;; Set default font. First one found is selected.
 (cond
  ((eq window-system nil) nil)
- ((font-existsp "Source Code Pro")
-  (set-face-attribute 'default nil :height 121 :font "Source Code Pro")) ; moved order
  ((font-existsp "PragmataPro")
   (set-face-attribute 'default nil :height 131 :font "PragmataPro"))
+ ((font-existsp "Source Code Pro")
+  (set-face-attribute 'default nil :height 121 :font "Source Code Pro")) ; moved order
  ((font-existsp "Input Mono Compressed")
   (set-face-attribute 'default nil :height 131 :font "Input Mono Compressed"))
  ((font-existsp "Menlo")
