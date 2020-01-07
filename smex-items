@@ -1,20 +1,21 @@
 
 ;; ----- smex-history -----
 (
- starter-kit-compile
- imenu
  dired
+ term
+ imenu
+ starter-kit-compile
  customize-themes
  list-packages
  R
- ag
 )
 
 ;; ----- smex-data -----
 (
- (dired . 3)
+ (dired . 6)
  (list-packages . 1)
  (customize-themes . 1)
- (imenu . 1)
- (starter-kit-compile . 1)
+ (imenu . 3)
+ (starter-kit-compile . 2)
+ (term . 1)
 )
