@@ -12,7 +12,7 @@ The Emacs Starter Kit for the Social Sciences is maintained by [[http://kieranhe
 Healy]]. The original version was written by [[http://github.com/technomancy/emacs-starter-kit/tree][Phil Hagelberg]]. This
 version is more directly descended from [[http://eschulte.github.com/emacs-starter-kit/][Eric Schulte's]] excellent
 org-mode implementation. It is designed specifically for [[http://emacsformacosx.com/builds][GNU Emacs 24.4
-on Mac OS X]]. 
+on Mac OS X]].
 
 The goal of this kit is to provide a more useful set of defaults than
 you get normally with Emacs. It's intended for beginners, but provides
@@ -22,12 +22,12 @@ particularly useful for researchers in the social sciences.
 
 The main advantage of this Emacs Starter Kit are
 - better default settings
-- inclusion of many useful libraries and packages 
+- inclusion of many useful libraries and packages
 - "literate" customization embedded in Org-mode files
 - an organized directory structure
 - git provides for version control, backup, and sharing
 
-Source code for the latest version is at [[http://kjhealy.github.com/emacs-starter-kit/]]. 
+Source code for the latest version is at [[http://kjhealy.github.com/emacs-starter-kit/]].
 
 ** Learning
    :PROPERTIES:
@@ -48,15 +48,15 @@ can be found at [[http://kieranhealy.org/resources/eamcs-starter-kit.html/]].
 If you have used Emacs before and already have a =.emacs= file or =.emacs.d= directory, back them up and then delete them. See below for details on how to add customizations to the kit.
 
 *** Getting the Starter Kit
-You have two choices. 
+You have two choices.
 
-/Option A/. [[https://github.com/kjhealy/emacs-starter-kit/archive/master.zip][Download]] a =.zip= file of the kit. 
+/Option A/. [[https://github.com/kjhealy/emacs-starter-kit/archive/master.zip][Download]] a =.zip= file of the kit.
 
-/Option B/. If you want to keep up with changes to the kit, you should clone the source code using git rather than simply copying a static version of it. In general I think you should be using version control on your plain-text documents anyway, so I recommend this option. The most straightforward way to get the tools you need is to *install Xcode*. Xcode is what software developers use to write Mac and iOS applications. As such it comes with a bunch of things we are not so interested in, but it makes it easy to install the tools we do need. It's available for free [[https://developer.apple.com/xcode/][via the Mac App Store]]. Once downloaded, launch Xcode, go to Xcode &#62; Preferences &#62; Downloads and install the *Command Line Tools for Xcode*. At that point you can quit Xcode and never use it again. Alternatively, go to [[https://developer.apple.com][Apple's Developer Site]], login with your Apple ID and download the Command Line Tools for Xcode package by itself, without the Xcode application. 
+/Option B/. If you want to keep up with changes to the kit, you should clone the source code using git rather than simply copying a static version of it. In general I think you should be using version control on your plain-text documents anyway, so I recommend this option. The most straightforward way to get the tools you need is to *install Xcode*. Xcode is what software developers use to write Mac and iOS applications. As such it comes with a bunch of things we are not so interested in, but it makes it easy to install the tools we do need. It's available for free [[https://developer.apple.com/xcode/][via the Mac App Store]]. Once downloaded, launch Xcode, go to Xcode &#62; Preferences &#62; Downloads and install the *Command Line Tools for Xcode*. At that point you can quit Xcode and never use it again. Alternatively, go to [[https://developer.apple.com][Apple's Developer Site]], login with your Apple ID and download the Command Line Tools for Xcode package by itself, without the Xcode application.
 
 *** Prerequisites
 
-*0.1 Get Emacs*.  The starter kit requires at least Emacs 24.4 (released October 2014), and preferably the most recent released version. [[http://emacsformacosx.com][Download Emacs here]]. Alternatively, if you know what you're doing you may [[http://www.gnu.org/software/emacs/#Obtaining][compile it yourself]]. 
+*0.1 Get Emacs*.  The starter kit requires at least Emacs 24.4 (released October 2014), and preferably the most recent released version. [[http://emacsformacosx.com][Download Emacs here]]. Alternatively, if you know what you're doing you may [[http://www.gnu.org/software/emacs/#Obtaining][compile it yourself]].
 
 
 *0.2 Install a Modern TeX Distribution and the Skim PDF reader*. If you are using OS X, [[http://tug.org/mactex/][download MacTeX]]  and install it. The kit is set up to use the [[skim-app.sourceforge.net/][Skim PDF reader]] to display PDF files created from =.tex= files. You can use other readers, but will need to modify the setup in the =starter-kit-latex.org= file.
@@ -163,7 +163,7 @@ general starter-kit updates without conflict.
      #+begin_src sh
        echo $USER
      #+end_src
-       
+
      If your configuration starts to feel cramped in a single file
      (although with the nested headlines of an Org-mode file, that
      could take a while) and you want to stretch your config's legs,
@@ -190,7 +190,7 @@ general starter-kit updates without conflict.
      source and place it directly in the =src= directory.  Any
      packages found there will automatically be added to your
      load-path when Emacs starts up.
-     
+
 Some additional miscellaneous configuration and getting started
 suggestions
 - First off see the [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Customization.html#Customization][Customization]] node in the Emacs manual.  Available
@@ -211,7 +211,7 @@ suggestions
 
 Libraries from [[http://elpa.gnu.org/packages/][ELPA]] or the [[http://melpa.milkbox.net/][MELPA]] Repo pare preferred when available since dependencies
 are handled automatically, and the burden to update them is removed
-from the user. 
+from the user.
 
 Sometimes packages are removed from the Starter Kit as they get added
 to ELPA itself. This has occasionally caused problems with certain
@@ -232,7 +232,7 @@ These should be loaded on startup rather than autoloaded on demand
 since they are likely to be used in every session
 
 #+srcname: starter-kit-load-on-startup
-#+begin_src emacs-lisp 
+#+begin_src emacs-lisp
   (require 'cl)
   (require 'saveplace)
   (require 'ffap)
@@ -258,7 +258,7 @@ Function to check if a packages exist in the load path.  This may be
 
 *** Function for loading/compiling starter-kit-*
 #+srcname: starter-kit-load
-#+begin_src emacs-lisp 
+#+begin_src emacs-lisp
   (defun starter-kit-load (file)
     "This function is to be used to load starter-kit-*.org files."
     (org-babel-load-file (expand-file-name file
@@ -302,13 +302,13 @@ aspell workaround in [[file:starter-kit-aspell.org][starter-kit-aspell]]
 Load up [[http://tromey.com/elpa/][ELPA]], the Emacs Lisp package manager.
 
 #+srcname: starter-kit-elpa
-#+begin_src emacs-lisp 
+#+begin_src emacs-lisp
     (require 'package)
     (setq package-archives
               '(
             ("gnu"         . "http://elpa.gnu.org/packages/")
             ("melpa"   . "https://melpa.org/packages/")))
-  
+
 
   ;;; Add support to package.el for pre-filtering available packages
   (defvar package-filter-function nil
@@ -318,15 +318,15 @@ Load up [[http://tromey.com/elpa/][ELPA]], the Emacs Lisp package manager.
   PACKAGE is a symbol, VERSION is a vector as produced by `version-to-list', and
   ARCHIVE is the string name of the package archive.")
 
-  
+
   (defadvice package--add-to-archive-contents
-  
+
     (around filter-packages (package archive) activate)
-  
+
     "Add filtering of available packages using `package-filter-function', if non-nil."
-  
+
     (when (or (null package-filter-function)
-  
+
   (funcall package-filter-function
            (car package)
            (funcall (if (fboundp 'package-desc-version)
@@ -359,7 +359,7 @@ Load up [[http://tromey.com/elpa/][ELPA]], the Emacs Lisp package manager.
 
 Work around a bug on OS X where system-name is FQDN
 #+srcname: starter-kit-osX-workaround
-#+begin_src emacs-lisp 
+#+begin_src emacs-lisp
   (if (eq system-type 'darwin)
       (setq system-name (car (split-string system-name "\\."))))
 #+end_src
@@ -371,7 +371,7 @@ raw emacs-lisp files or as embedded elisp in org-mode files (as done
 in this document).
 
 #+srcname: starter-kit-user/system-setup
-#+begin_src emacs-lisp 
+#+begin_src emacs-lisp
   (setq system-specific-config (concat dotfiles-dir system-name ".el")
         system-specific-literate-config (concat dotfiles-dir system-name ".org")
         user-specific-config (concat dotfiles-dir user-login-name ".el")
@@ -420,9 +420,9 @@ Miscellaneous settings in [[file:starter-kit-misc.org][starter-kit-misc]]
 *** Starter kit completion and snippets
 Located in [[file:starter-kit-completion.org][starter-kit-completion]].
 
-#+begin_src emacs-lisp 
-  (starter-kit-load "starter-kit-completion.org")    
-#+end_src 
+#+begin_src emacs-lisp
+  (starter-kit-load "starter-kit-completion.org")
+#+end_src
 
 ** Language/Mode Specific Files
 These sections pertain to specific languages or modes.  Feel free to
@@ -432,32 +432,32 @@ language.
 *** Starter kit Org-mode
 Located in [[file:starter-kit-org.org][starter-kit-org]].
 
-#+begin_src emacs-lisp 
+#+begin_src emacs-lisp
 (starter-kit-load "starter-kit-org.org")
 #+end_src
 
 *** Starter kit eshell
 Located in [[file:starter-kit-eshell.org][starter-kit-eshell]]
 
-#+begin_src emacs-lisp 
+#+begin_src emacs-lisp
 (starter-kit-load "starter-kit-eshell.org")
 #+end_src
 
 *** Starter kit lisp
 Located in [[file:starter-kit-lisp.org][starter-kit-lisp]]
 
-#+begin_src emacs-lisp 
+#+begin_src emacs-lisp
 (starter-kit-load "starter-kit-lisp.org")
 #+end_src
 
 *** Starter Kit Python
 Located in [[file:starter-kit-python.org][starter-kit-python]]
 
-#+begin_src emacs-lisp 
+#+begin_src emacs-lisp
 (starter-kit-load "starter-kit-python.org")
 #+end_src
 
-*** Starter Kit Latex 
+*** Starter Kit Latex
 Located in [[file:starter-kit-latex.org][starter-kit-latex]]
 
 #+begin_src emacs-lisp
@@ -471,7 +471,7 @@ Located in [[file:starter-kit-stats.org][starter-kit-stats]]
   (starter-kit-load "starter-kit-stats.org")
 #+end_src
 
-*** Starter Kit Text 
+*** Starter Kit Text
 Located in [[file:starter-kit-text.org][starter-kit-text]]
 
 #+begin_src emacs-lisp
@@ -481,14 +481,14 @@ Located in [[file:starter-kit-text.org][starter-kit-text]]
 ** Load User/System Specific Files
 *** Settings from M-x customize
 #+srcname: m-x-customize-customizations
-#+begin_src emacs-lisp 
+#+begin_src emacs-lisp
   (load custom-file 'noerror)
 #+end_src
 
 *** E-lisp customization
 After we've loaded all the Starter Kit defaults, lets load the User's stuff.
 #+srcname: starter-kit-load-files
-#+begin_src emacs-lisp 
+#+begin_src emacs-lisp
   (if (file-exists-p elisp-source-dir)
       (let ((default-directory elisp-source-dir))
         (normal-top-level-add-subdirs-to-load-path)))
@@ -534,7 +534,7 @@ these instructions.
    manual, you can enter =make doc/org.pdf= and find the resulting
    file in the doc directory.
 
-** I recently updated the starter kit, but org is an old version. How do I fix this? 
+** I recently updated the starter kit, but org is an old version. How do I fix this?
 Doing a =git pull= and =git submodule update= will not be
 enough. Go to the =src/org= directory and enter =make clean= to get
 rid of the old version. Then, enter =make=, or follow the
@@ -579,7 +579,7 @@ uses), the problem most likely resides in your local setup.
 
    If you installed the starter kit to =~/.emacs.d/= then the
    directory =~/.emacs.d/src/org/doc= should be at the top of
-   =Info-directory-list=. 
+   =Info-directory-list=.
 3) Did you =make= the manual?  Especially if you choose [[#no-compile][not to compile
    org-mode]], you may need to compile the documentation. Regardless of
    whether or not you compiled org, it may be helpful to try this
