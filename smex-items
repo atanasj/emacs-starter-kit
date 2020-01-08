@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- toggle-frame-maximized
- lorem
+ imenu-anywhere
  load-file
+ display-time
+ display-time-world
  starter-kit-compile
- list-packages
- zotero-cayw
- projectile-commander
+ imenu
+ toggle-frame-maximized
 )
 
 ;; ----- smex-data -----
@@ -15,17 +15,21 @@
  (dired . 8)
  (list-packages . 2)
  (customize-themes . 1)
- (imenu . 3)
- (starter-kit-compile . 3)
+ (imenu . 7)
+ (starter-kit-compile . 5)
  (term . 1)
  (magit . 2)
  (auto-fill-mode . 2)
  (package-install . 1)
  (drag-stuff-mode . 1)
- (load-file . 8)
+ (load-file . 9)
  (projectile-mode . 2)
  (projectile-commander . 1)
  (zotero-cayw . 3)
  (lorem . 1)
  (toggle-frame-maximized . 2)
+ (fullscreen . 1)
+ (display-time . 6)
+ (display-time-world . 1)
+ (imenu-anywhere . 2)
 )

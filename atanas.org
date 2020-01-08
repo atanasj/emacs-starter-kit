@@ -98,15 +98,13 @@ Bind full screen to `C-c f`.
 
 #+source: fullscreen-4
 #+begin_src emacs-lisp
-    ;; set maximised to borderless
-    ;; (set-frame-parameter nil 'fullscreen 'maximized)
-    ;; original function
-    (defun fullscreen (&optional f)
-      (interactive)
-      (set-frame-parameter f 'fullscreen
-                           (if (frame-parameter f 'fullscreen) nil 'fullboth)))
-    (global-set-key (kbd "C-c f") 'fullscreen)
-    (add-hook 'after-make-frame-functions 'fullscreen)
+;; COMMENTED AS NOT USEFUL
+;;    (defun fullscreen (&optional f)
+;;      (interactive)
+;;      (set-frame-parameter f 'fullscreen
+;;                           (if (frame-parameter f 'fullscreen) nil 'fullboth)))
+;;    (global-set-key (kbd "C-c f") 'fullscreen)
+;;    (add-hook 'after-make-frame-functions 'fullscreen)
 #+end_src
 
 *** Mac Key mode
@@ -567,6 +565,9 @@ Some atanas tweaks.
   (require 'projectile)
   (define-key projectile-mode-map (kbd "C-S-c p") 'projectile-command-map)
   (projectile-mode +1) 
+
+  ;; imenu-anywhere
+  (global-set-key (kbd "C-.") #'imenu-anywhere)
     
 #+end_src   
 

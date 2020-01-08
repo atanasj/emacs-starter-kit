@@ -5,6 +5,9 @@
 ;; This is the first thing to get loaded.
 ;;
 
+;; (add-to-list 'default-frame-alist '(fullscreen . maximized)) ; open on maximized, new windows not maxmized
+(add-to-list 'initial-frame-alist '(fullscreen . maximized)) ; open on maximized
+(setq frame-resize-pixelwise t) ; want to have a full screen effect
 (setq dotfiles-dir (file-name-directory (or (buffer-file-name) load-file-name)))
 (setq dotfiles-dir (file-name-directory (or load-file-name (buffer-file-name))))
 (setq autoload-file (concat dotfiles-dir "loaddefs.el"))
@@ -49,10 +52,10 @@
 ;; Set default font. First one found is selected.
 (cond
  ((eq window-system nil) nil)
- ((font-existsp "PragmataPro")
-  (set-face-attribute 'default nil :height 131 :font "PragmataPro"))
  ((font-existsp "Source Code Pro")
   (set-face-attribute 'default nil :height 121 :font "Source Code Pro")) ; moved order
+ ((font-existsp "PragmataPro")
+  (set-face-attribute 'default nil :height 131 :font "PragmataPro"))
  ((font-existsp "Input Mono Compressed")
   (set-face-attribute 'default nil :height 131 :font "Input Mono Compressed"))
  ((font-existsp "Menlo")

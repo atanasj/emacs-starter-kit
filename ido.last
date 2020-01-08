@@ -2,6 +2,7 @@
 
 ;; ----- ido-last-directory-list -----
 (
+ ("/Users/atanas/git/PR_qual_memos/md/" . "phd_test_scrv6.md/")
  ("/Users/atanas/git/PR_qual_memos/" . "md/")
  ("/Users/atanas/git/" . "PR_qual_memos/")
  ("/Users/atanas/" . ".emacs.d/")
@@ -9,25 +10,39 @@
 
 ;; ----- ido-work-directory-list -----
 (
- "/Users/atanas/.emacs.d/"
  "/Users/atanas/git/PR_qual_memos/md/"
+ "/Users/atanas/.emacs.d/"
+ "/Users/atanas/"
  "/Users/atanas/git/PR_qual_memos/"
 )
 
 ;; ----- ido-work-file-list -----
 (
+ "testR.Rmd"
+ "starter-kit-completion.org"
+ "tester.rmd"
+ "init.el"
+ "#test4.rmd#"
+ "test4.rmd"
+ "test3.md"
+ "test2.md"
  "starter-kit-defuns.org"
  "atanas.org"
- ".projectile"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/Users/atanas/.emacs.d/" (24084 41607 228846 641000) "src/" "starter-kit-text.org" "starter-kit-defuns.el" "backups/" "starter-kit-misc.org" ".git/" "starter-kit-aspell.el" "starter-kit-misc.elc" "elpa/" "starter-kit-python.org" "starter-kit-bindings.el" "starter-kit-org.el" "atanas.el" "starter-kit-stats.el" "starter-kit-stats.org" "starter-kit-latex.org" "starter-kit-latex.el" "starter-kit-elpa.el" "starter-kit.el" "starter-kit-text.el" "atanas.elc" ".gitignore" "dominating-file.el" "starter-kit-python.el" "atanas.org" "README.md" "init.el" "starter-kit-eshell.org" "auto-save-list/" "starter-kit-defuns.org" "starter-kit.org" "starter-kit-org.org" "starter-kit-completion.el" "custom.el" "#starter-kit-bindings.org#" "starter-kit-aspell.org" "transient/" "projectile-bookmarks.eld" "starter-kit-eshell.el" "elpy/" "starter-kit-lisp.org" "starter-kit-lisp.el" "eshell/" "smex-items" ".DS_Store" ".mc-lists.el" "ido.last" "starter-kit-misc.el" "starter-kit-completion.org" "starter-kit-bindings.org" "snippets/" "starter-kit-elpa.org" "../" "./")
+ ("/Users/atanas/.emacs.d/" (24085 8238 492844 204000) "src/" "starter-kit-text.org" "starter-kit-defuns.el" "backups/" "starter-kit-misc.org" ".git/" "starter-kit-aspell.el" "starter-kit-misc.elc" "#starter-kit-completion.org#" "elpa/" "starter-kit-python.org" "starter-kit-bindings.el" "starter-kit-org.el" "atanas.el" "starter-kit-stats.el" "starter-kit-stats.org" "starter-kit-latex.org" "starter-kit-latex.el" "starter-kit-elpa.el" "starter-kit.el" "starter-kit-text.el" "atanas.elc" ".gitignore" "dominating-file.el" "starter-kit-python.el" "atanas.org" "README.md" "init.el" "starter-kit-eshell.org" "auto-save-list/" "starter-kit-defuns.org" "starter-kit.org" "starter-kit-org.org" "starter-kit-completion.el" "custom.el" "#starter-kit-bindings.org#" "starter-kit-aspell.org" "transient/" "projectile-bookmarks.eld" "starter-kit-eshell.el" "elpy/" "starter-kit-lisp.org" "starter-kit-lisp.el" "eshell/" "smex-items" ".DS_Store" ".mc-lists.el" "ido.last" "starter-kit-misc.el" "starter-kit-completion.org" "starter-kit-bindings.org" "snippets/" "starter-kit-elpa.org" "../" "./")
 
- ("/Users/atanas/" (24084 38667 377827 493000) ".composer/" "vendor/" "git/" ".gtk-bookmarks" ".viminfo" "composer.json" ".bash_history" ".onyx/" ".mume/" ".python-eggs/" ".gvimrc" ".gitconfig" ".aws/" "reveal.js/" ".cache/" ".python_history" "Downloads/" ".Renviron.d/" ".vim_backup/" ".aspnet/" ".Xauthority" ".vim_runtime/" ".sqlanywhere16/" ".gem/" ".dvdcss/" ".bash_profile" ".spss/" ".spacemacs" "Frameworks/" ".vscode/" ".mono/" ".TemporaryItems/" ".rstudio-desktop/" ".swt/" "dwhelper/" ".bluemix/" "Documents/" ".npm/" "~$search Consent Form, v2.0.0.docx" ".jupyter/" ".gitflow_export" ".Rprofile.bak.20190726-141634" ".Trash/" ".tor/" ".Rapp.history" "Dropbox/" ".Qsync/" ".qicon" ".freemind/" ".parallel/" ".ghc/" ".profile" "Applications/" ".vimrc" "Movies/" ".vim_mru_files" ".ssh/" ".dbeaver-drivers/" ".crv2013/" "#foo#" "#TUTORIAL#" ".Rprofile.d/" "#python/" ".codeintel/" ".quicktype-vscode/" ".idlerc/" ".serverauth.1881" ".smb/" ".csl/" "package-lock.json" ".notable/" ".emacs.d.vanilla.bak/" ".emacs.d.ian.bak/" ".dropbox/" "Public/" ".iterm2/" ".licenses/" ".perlbrew/" "Google Drive/" ".bash_sessions/" "zip/" ".emacs.d.spacemiles.bak/" "Sites/" ".cups/" ".radian_history" ".gitignore_global" ".android/" ".emacs.d/" ".bash_profile.backup" ".sejda" "shallow-backup/" "Zotero/" ".profile2142372326" ".IdentityService/" "Calibre Library/" ".oracle_jre_usage/" "DOSBOX/" ".ePUBeedrmremoval/" "Qsync/" "Books/" ".lesshst" "Untitled-1.md" ".electron/" ".matplotlib/" ".mackup.cfg" "Library/" "Desktop/" ".ipython/" "OneDrive - University of Wollongong/" ".cpan/" ".boto" ".serverauth.23240" ".ePUBee/" ".MCTranscodingSDK/" "#StackOverflow/" ".rnd" ".vimrc_backup" ".bundle/" ".nvm/" "spacemacs_cfg/" ".notable.json" ".atom/" "source/" ".InstallAnywhere/" ".go/" ".pylint.d/" "Pictures/" ".local/" ".freeplane/" ".sqlworkbench/" ".templateengine/" ".pipupgrade/" "plugins/" ".emacs.d.space.bak/" ".cpanm/" ".vnc/" ".subversion/" ".cabal/" "my_bash_profile_cp.sh" ".rbenv/" "dist/" ".shallow-backup" "#R_Projects/" "bin/" ".tooling/" ".iterm2_shell_integration.bash" ".wget-hsts" ".hgignore_global" ".stCommitMsg" ".Rprofile" ".serverauth.19876" ".CFUserTextEncoding" ".yarnrc" ".sambox.cache" ".electron-gyp/" ".pdfbox.cache" "sw_vers" ".pandoc/" ".gnupg/" ".R/" ".DS_Store" "go/" ".gauth" ".489454.padl" ".ActivePerl/" ".vim/" "TUTORIAL" "perl5/" ".node-gyp/" "Temp/" "bash.txt" ".gnupg_pre_2.1/" "composer.lock" "usr/" ".openshot_qt/" "Brains/" ".docker/" ".wine/" "DropboxHelperTools.old/" ".gitkraken/" ".kodi/" ".qualcoder/" "_R/" "Music/" ".config/" ".Renviron" ".eclipse/" ".Rhistory" ".stack/" ".quokka/" ".dbeaver4/" ".TheBrain/" "_exp/" "../" "./")
+ ("/Users/atanas/git/PR_qual_memos/md/manuscript/" (24083 6094 861062 255000) "07.appendix.md" "02.aims.md" "01.abstract.md" "05.discussion.md" "04.results.md" "00.front.md" "03.method.md" "02.introduction.md" ".DS_Store" "06.references.md" "../" "./")
 
- ("/Users/atanas/git/PR_qual_memos/md/" (24083 55917 291340 816000) "PR_qual_memos.sublime-project" "analytic-assumptions.md" "abstract.md" "pre-analysis_notes.md" "index.md" "results_MM.md" "results.md" "reflections.md" "#testR.Rmd#" "README.md" "clinician_q's.txt" "PR_qual_memos.sublime-workspace" "testR.Rmd" "phd_test_scrv6.md/" ".DS_Store" "manuscript/" "../" "./")
+ ("/Users/atanas/git/PR_qual_memos/md/" (24085 7547 12264 609000) "PR_qual_memos.sublime-project" "analytic-assumptions.md" "abstract.md" ".#testR.Rmd" "pre-analysis_notes.md" "#abstract.md#" "index.md" "results_MM.md" "results.md" "reflections.md" "#testR.Rmd#" "README.md" "clinician_q's.txt" "PR_qual_memos.sublime-workspace" "testR.Rmd" "phd_test_scrv6.md/" ".DS_Store" "manuscript/" "../" "./")
+
+ ("/Users/atanas/" (24085 6422 511151 73000) ".composer/" "vendor/" "git/" ".gtk-bookmarks" ".viminfo" "composer.json" ".bash_history" ".onyx/" ".emacs.d.spacemacs/" ".mume/" ".python-eggs/" ".gvimrc" ".gitconfig" ".aws/" "reveal.js/" ".cache/" ".python_history" "Downloads/" ".Renviron.d/" ".vim_backup/" ".aspnet/" ".Xauthority" ".vim_runtime/" ".sqlanywhere16/" ".gem/" ".dvdcss/" ".bash_profile" ".spss/" ".spacemacs" "Frameworks/" ".vscode/" ".mono/" ".TemporaryItems/" ".rstudio-desktop/" ".emacs.d.vanilla/" ".swt/" "dwhelper/" ".bluemix/" "Documents/" ".npm/" "~$search Consent Form, v2.0.0.docx" ".jupyter/" ".gitflow_export" ".Rprofile.bak.20190726-141634" ".Trash/" ".tor/" ".Rapp.history" "Dropbox/" ".Qsync/" ".qicon" ".freemind/" ".parallel/" ".ghc/" ".profile" "Applications/" ".vimrc" "Movies/" ".vim_mru_files" ".ssh/" ".dbeaver-drivers/" ".crv2013/" ".Rprofile.d/" "#python/" "emacs-profiles/" ".emacs.d.yay-evil/" ".codeintel/" ".quicktype-vscode/" ".idlerc/" ".serverauth.1881" ".smb/" ".csl/" "package-lock.json" ".notable/" ".dropbox/" "Public/" ".iterm2/" ".licenses/" ".emacs.d.space-miles/" ".perlbrew/" "Google Drive/" ".bash_sessions/" "zip/" "Sites/" ".cups/" ".radian_history" ".gitignore_global" ".android/" ".emacs.d/" ".bash_profile.backup" ".sejda" "shallow-backup/" "Zotero/" ".profile2142372326" ".IdentityService/" "Calibre Library/" ".oracle_jre_usage/" ".doom.d/" "DOSBOX/" ".ePUBeedrmremoval/" ".emacs-profiles.el" "Qsync/" "Books/" ".lesshst" "Untitled-1.md" ".electron/" ".matplotlib/" ".mackup.cfg" "Library/" "Desktop/" ".ipython/" "OneDrive - University of Wollongong/" ".cpan/" ".boto" ".serverauth.23240" ".ePUBee/" ".MCTranscodingSDK/" "#StackOverflow/" ".rnd" ".vimrc_backup" ".bundle/" ".nvm/" "spacemacs_cfg/" ".notable.json" ".emacs.d.doom/" ".atom/" "source/" ".InstallAnywhere/" ".go/" ".pylint.d/" "Pictures/" ".local/" ".freeplane/" ".sqlworkbench/" ".templateengine/" ".pipupgrade/" "plugins/" ".cpanm/" ".vnc/" ".subversion/" ".cabal/" "my_bash_profile_cp.sh" ".rbenv/" "dist/" ".shallow-backup" "#R_Projects/" "bin/" ".tooling/" ".iterm2_shell_integration.bash" ".wget-hsts" ".hgignore_global" ".stCommitMsg" ".Rprofile" ".serverauth.19876" ".CFUserTextEncoding" ".yarnrc" ".sambox.cache" ".electron-gyp/" ".pdfbox.cache" ".pandoc/" ".gnupg/" ".R/" ".DS_Store" "go/" ".gauth" ".489454.padl" ".ActivePerl/" ".vim/" "perl5/" ".node-gyp/" "Temp/" "bash.txt" ".gnupg_pre_2.1/" "composer.lock" "usr/" ".openshot_qt/" "Brains/" ".docker/" ".wine/" "DropboxHelperTools.old/" ".gitkraken/" ".kodi/" ".qualcoder/" "_R/" "Music/" ".config/" ".Renviron" ".eclipse/" ".Rhistory" ".stack/" ".quokka/" ".dbeaver4/" ".TheBrain/" "_exp/" "../" "./")
+
+ ("/Users/" (23791 55257 627762 101000) "Shared/" ".localized" "atanas/" "../" "./")
+
+ ("/Users/atanas/git/PR_qual_memos/md/phd_test_scrv6.md/" (24058 14565 912006 531000) "PastedGraphic.png" "phd_test_scrv6.md" "PastedGraphic1.png" "phd_test_scrv6.pdf" "../" "./")
 
  ("/Users/atanas/git/PR_qual_memos/" (24084 28710 568582 868000) "PR_qual_memos.Rproj" ".idea/" "docx/" ".Rproj.user/" "data/" ".vscode/" ".git/" "mm/" "md/" ".projectile" ".gitignore" "html/" "pdf/" "code/" "PR_qual.nvpx" "figs/" "PR_clinicians" ".DS_Store" "transcripts/" "../" "./")
 
