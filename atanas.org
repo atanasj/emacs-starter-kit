@@ -613,9 +613,9 @@ Some atanas tweaks.
   ;; To disable shortcut "jump" indicators for each section, set
   (setq dashboard-show-shortcuts t)
   ;; customise which widgets are displayed
-  (setq dashboard-items '((recents  . 5)
+  (setq dashboard-items '((recents  . 10)
                         (bookmarks . 5)
-                        (projects . 5)
+                        (projects . 10)
                         (agenda . 5)
                         (registers . 5)))
   ;; add widget icons

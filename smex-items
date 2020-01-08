@@ -16,7 +16,7 @@
  (list-packages . 3)
  (customize-themes . 5)
  (imenu . 7)
- (starter-kit-compile . 6)
+ (starter-kit-compile . 7)
  (term . 1)
  (magit . 2)
  (auto-fill-mode . 2)
