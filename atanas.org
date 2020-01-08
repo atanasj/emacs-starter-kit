@@ -35,12 +35,13 @@ Finally, the [[*Local%20Org-mode%20XeLaTeX%20Export%20Settings][Local Org-mode X
  delete the lines.
 
 ** Local Miscellaneous Settings
+
 *** Use GNU ls
+
 OS X ships with BSD's ls command which doesn't have all the features of GNU ls (used internally by dired). Install `coreutils` with homebrew (`brew install coreutils`) and use `gls` instead.
 
 #+source: gnu-ls
 #+begin_src emacs-lisp
-
 (add-to-list 'load-path "~/.emacs.d/elpa/magit/lisp")
 (require 'magit)
 
@@ -549,40 +550,34 @@ Some atanas tweaks.
 
 #+srcname: atanas-custom
 #+begin_src emacs-lisp
-  ;; use-package for easier loading
-  (require 'use-package)
-  (require 'quelpa)
-  (require 'quelpa-use-package)
-
   ;; load drag-stuff
-  (require 'drag-stuff)
-  ;; set drag-stuff for global
+  (use-package drag-stuff
+  :init
   (drag-stuff-global-mode 1)
-  ;; set the defaul kebindings
-  (drag-stuff-define-keys)
+  (drag-stuff-define-keys))
 
   ;; load all-the-icons
   (require 'font-lock)
   (use-package font-lock+
-  :ensure t
-  :quelpa
-  (font-lock+ :repo "emacsmirror/font-lock-plus" :fetcher github))
+  :ensure t)
+  ;; the below two lines were only used when install 'font-lock+, since disabled and saves on startup
+  ;; :quelpa
+  ;; (font-lock+ :repo "emacsmirror/font-lock-plus" :fetcher github))
   (use-package all-the-icons)
   (use-package all-the-icons-dired
-  :hook (dired-mode . all-the-icons-dired-mode))
-
-  ;; spaceline config with all-the-icons
-  (use-package spaceline-all-the-icons :after spaceline
-  :load-path "/Users/atanas/.emacs.d/atanas/spaceline-all-the-icons.el")
-  (use-package spaceline :after powerline
-  :config (setq-default mode-line-format '("%e" (:eval (spaceline-ml-ati)))))
+  :hook 
+  (dired-mode . all-the-icons-dired-mode))
 
   ;; more easily navigate and manage projects
   ;; need to review for propoer keybindings
   ;; load projectile
-  (require 'projectile)
-  (define-key projectile-mode-map (kbd "C-S-c p") 'projectile-command-map)
-  (projectile-mode +1)
+  ;; (require 'projectile)
+  ;; (define-key projectile-mode-map (kbd "C-S-c p") 'projectile-command-map)
+  ;; (projectile-mode +1)
+  (use-package projectile
+    :bind ("C-S-c p" . projectile-command-map))
+    :init
+    (projectile-mode +1)
 
   ;; imenu-anywhere
   ;; (global-set-key (kbd "C-.") #'imenu-anywhere)
@@ -596,31 +591,32 @@ Some atanas tweaks.
   ;; enable standard dashboard
   (use-package dashboard
     :ensure t
+    :init
+    (setq initial-buffer-choice (lambda () (get-buffer "*dashboard*")))
+    ;; Set the title
+    (setq dashboard-banner-logo-title "Welcome to Emacs Dashboard")
+    ;; Set the banner
+    (setq dashboard-startup-banner 3)
+    ;; Value can be
+    ;; 'official which displays the official emacs logo
+    ;; 'logo which displays an alternative emacs logo
+    ;; 1, 2 or 3 which displays one of the text banners
+    ;; "path/to/your/image.png" which displays whatever image you would prefer
+    ;; Content is not centered by default. To center, set
+    (setq dashboard-center-content t)
+    ;; To disable shortcut "jump" indicators for each section, set
+    (setq dashboard-show-shortcuts t)
+    ;; customise which widgets are displayed
+    (setq dashboard-items '((recents  . 10)
+                          (bookmarks . 5)
+                          (projects . 20)
+                          (agenda . 5)
+                          (registers . 5)))
+    ;; add widget icons
+    (setq dashboard-set-heading-icons t)
+    (setq dashboard-set-file-icons t)
     :config
     (dashboard-setup-startup-hook))
-  (setq initial-buffer-choice (lambda () (get-buffer "*dashboard*")))
-  ;; Set the title
-  (setq dashboard-banner-logo-title "Welcome to Emacs Dashboard")
-  ;; Set the banner
-  (setq dashboard-startup-banner 3)
-  ;; Value can be
-  ;; 'official which displays the official emacs logo
-  ;; 'logo which displays an alternative emacs logo
-  ;; 1, 2 or 3 which displays one of the text banners
-  ;; "path/to/your/image.png" which displays whatever image you would prefer
-  ;; Content is not centered by default. To center, set
-  (setq dashboard-center-content t)
-  ;; To disable shortcut "jump" indicators for each section, set
-  (setq dashboard-show-shortcuts t)
-  ;; customise which widgets are displayed
-  (setq dashboard-items '((recents  . 10)
-                        (bookmarks . 5)
-                        (projects . 10)
-                        (agenda . 5)
-                        (registers . 5)))
-  ;; add widget icons
-  (setq dashboard-set-heading-icons t)
-  (setq dashboard-set-file-icons t)
 
   ;; enable dashboard with git
   ;; :config

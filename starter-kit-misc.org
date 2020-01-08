@@ -104,8 +104,9 @@ If launching Emacs as in windowing system, show the menu. If launching in a tty/
 #+srcname: starter-kit-saveplace
 #+begin_src emacs-lisp
 
-  (require 'saveplace)
-  (setq-default save-place t)
+  (use-package saveplace
+  :config
+  (setq-default save-place t))
 
 #+end_src
 
@@ -159,8 +160,14 @@ ido-mode is like magic pixie dust!
 A nicer modeline. 
 #+source: powerline-load
 #+begin_src emacs-lisp
-  (require 'powerline)
-  (powerline-default-theme)
+  ;; spaceline config with all-the-icons
+  (use-package spaceline-all-the-icons
+    :after spaceline
+    :load-path "/Users/atanas/.emacs.d/atanas/spaceline-all-the-icons.el")
+  (use-package spaceline
+    :after powerline
+    :config
+    (setq-default mode-line-format '("%e" (:eval (spaceline-ml-ati)))))
 
 #+end_src
 
@@ -180,10 +187,11 @@ A nicer modeline.
 #+begin_src emacs-lisp
 (add-to-list 'auto-mode-alist '("COMMIT_EDITMSG$" . diff-mode))
 (add-to-list 'auto-mode-alist '("\\.css$" . css-mode))
-(require 'yaml-mode)
-(add-to-list 'auto-mode-alist '("\\.ya?ml$" . yaml-mode))
-(add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
+(use-package yaml-mode
+  :initi
+  (add-to-list 'auto-mode-alist '("\\.ya?ml$" . yaml-mode))
+  (add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
+  (add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode)))
 #+end_src
 
 ** Default to unified diffs

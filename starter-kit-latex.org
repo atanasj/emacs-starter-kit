@@ -8,14 +8,14 @@ This is part of the [[file:starter-kit.org][Emacs Starter Kit]].
 
 ** Load Support Packages
 *** Prettify Math in Buffers
-#+source: latex-pretty-symbols 
+#+source: latex-pretty-symbols
 #+begin_src emacs-lisp
-  (require 'latex-pretty-symbols)
+  (use-package latex-pretty-symbols)
 #+end_src
 
 *** Load RefTeX
 #+srcname: reftex-support
-#+begin_src emacs-lisp 
+#+begin_src emacs-lisp
   (add-hook 'LaTeX-mode-hook 'turn-on-reftex)   ; with AUCTeX LaTeX mode
   (add-hook 'pandoc-mode-hook 'turn-on-reftex)  ; with Pandoc mode
   (autoload 'reftex-mode     "reftex" "RefTeX Minor Mode" t)
@@ -35,7 +35,7 @@ This is part of the [[file:starter-kit.org][Emacs Starter Kit]].
   ;; use 'C-c (' instead of 'C-c [' because the latter is already
   ;; defined in orgmode to the add-to-agenda command.
   (defun org-mode-reftex-setup ()
-    (load-library "reftex") 
+    (load-library "reftex")
     (and (buffer-file-name)
     (file-exists-p (buffer-file-name))
     (reftex-parse-all))
@@ -65,9 +65,9 @@ This is part of the [[file:starter-kit.org][Emacs Starter Kit]].
           ("footcites" "[{")
           ("parencite" "[{")
           ("textcite" "[{")
-          ("fullcite" "[{") 
-          ("citetitle" "[{") 
-          ("citetitles" "[{") 
+          ("fullcite" "[{")
+          ("citetitle" "[{")
+          ("citetitles" "[{")
           ("headlessfullcite" "[{")))
 
   (setq reftex-cite-prompt-optional-args nil)
@@ -79,17 +79,17 @@ This is part of the [[file:starter-kit.org][Emacs Starter Kit]].
     ebib is a bibtex database manager that works inside emacs. It can
     talk to org-mode. See [[http://ebib.sourceforge.net/][the ebib project page]] for more. When Ebib is
     loaded, you can run it with =M-x ebib=.
-  
+
 #+source: ebib-load
 #+begin_src emacs-lisp
   (autoload 'ebib "ebib" "Ebib, a BibTeX database manager." t)
-  (setq ebib-preload-bib-files 
+  (setq ebib-preload-bib-files
         '("/Users/kjhealy/Documents/bibs/socbib.bib"))
   (add-hook 'LaTeX-mode-hook #'(lambda ()
           (local-set-key "\C-cb" 'ebib-insert-bibtex-key)))
 #+end_src
 
-** Configure AucTeX 
+** Configure AucTeX
 *** Automatic Parsing
 
 #+source: autoparse
@@ -102,7 +102,7 @@ This is part of the [[file:starter-kit.org][Emacs Starter Kit]].
 *** Use pdfLaTeX
     - Take this out to compile to DVI, instead.
 #+srcname: pdf-mode
-#+begin_src emacs-lisp 
+#+begin_src emacs-lisp
       (add-hook 'LaTeX-mode-hook 'TeX-PDF-mode)
 #+end_src
 
@@ -112,13 +112,13 @@ Allow AucTeX to use biber as well as/instead of bibtex.
 #+begin_src emacs-lisp
     ;; Biber under AUCTeX
     (defun TeX-run-Biber (name command file)
-      "Create a process for NAME using COMMAND to format FILE with Biber." 
+      "Create a process for NAME using COMMAND to format FILE with Biber."
      (let ((process (TeX-run-command name command file)))
         (setq TeX-sentinel-function 'TeX-Biber-sentinel)
         (if TeX-process-asynchronous
             process
           (TeX-synchronous-sentinel name file process))))
-    
+
     (defun TeX-Biber-sentinel (process name)
       "Cleanup TeX output buffer after running Biber."
       (goto-char (point-max))
@@ -138,10 +138,10 @@ Allow AucTeX to use biber as well as/instead of bibtex.
         (message (concat "Biber finished successfully. "
                          "Run LaTeX again to get citations right."))))
       (setq TeX-command-next TeX-command-default))
-  
+
   (eval-after-load "tex"
     '(add-to-list 'TeX-command-list '("Biber" "biber %s" TeX-run-Biber nil t :help "Run Biber"))
-    )    
+    )
 
 #+end_src
 
@@ -171,7 +171,7 @@ We use this (rather than the underscore character) for compatibilty with Pandoc.
       '(add-to-list 'TeX-command-list '("xelatexmk" "latexmk -synctex=1 -shell-escape -xelatex %s" TeX-run-TeX nil t :help "Process file with xelatexmk"))
       )
 
-  (add-hook 'TeX-mode-hook '(lambda () (setq TeX-command-default "latexmk")))  
+  (add-hook 'TeX-mode-hook '(lambda () (setq TeX-command-default "latexmk")))
 #+end_src
 
 *** Set a Path to Executables (optional)
@@ -204,14 +204,14 @@ We use this (rather than the underscore character) for compatibilty with Pandoc.
 ** Configure Org-babel
    - Add LaTeX to the list of languages Org-babel will recognize.
 #+srcname: add-latex
-#+begin_src emacs-lisp 
-     (require 'ob-latex)
+#+begin_src emacs-lisp
+     (use-package ob-latex)
   ;; (org-babel-add-interpreter "latex")
   ;; (add-to-list 'org-babel-tangle-langs '("latex" "tex"))
 #+end_src
    - Add LaTeX to a list of languages that raise noweb-type errors.
 #+srcname: noweb-error
-#+begin_src emacs-lisp 
+#+begin_src emacs-lisp
   (add-to-list 'org-babel-noweb-error-langs "latex")
 #+end_src
 

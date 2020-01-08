@@ -233,12 +233,16 @@ since they are likely to be used in every session
 
 #+srcname: starter-kit-load-on-startup
 #+begin_src emacs-lisp
-  (require 'cl)
-  (require 'saveplace)
-  (require 'ffap)
-  (require 'uniquify)
-  (require 'ansi-color)
-  (require 'recentf)
+  ;; use-package for easier loading
+  (require 'use-package)
+  (use-package quelpa)
+  (use-package quelpa-use-package)
+  (use-package cl)
+  (use-package saveplace)
+  (use-package ffap)
+  (use-package uniquify)
+  (use-package ansi-color)
+  (use-package recentf)
 #+end_src
 
 Function to check if a packages exist in the load path.  This may be
@@ -303,11 +307,12 @@ Load up [[http://tromey.com/elpa/][ELPA]], the Emacs Lisp package manager.
 
 #+srcname: starter-kit-elpa
 #+begin_src emacs-lisp
-    (require 'package)
+    (use-package package
+    :init
     (setq package-archives
               '(
             ("gnu"         . "http://elpa.gnu.org/packages/")
-            ("melpa"   . "https://melpa.org/packages/")))
+            ("melpa"   . "https://melpa.org/packages/"))))
 
 
   ;;; Add support to package.el for pre-filtering available packages

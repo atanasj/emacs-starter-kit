@@ -1,6 +1,6 @@
 * Starter kit yasnippet
 
-Yasnippet is a snippet expansion system for Emacs. It uses short phrases and the tab key to trigger the insertion of frequently-used snippets of code or text in your document. 
+Yasnippet is a snippet expansion system for Emacs. It uses short phrases and the tab key to trigger the insertion of frequently-used snippets of code or text in your document.
 
 ** Load the yasnippet bundle
 #+begin_src emacs-lisp :tangle yes
@@ -14,10 +14,10 @@ Yasnippet is a snippet expansion system for Emacs. It uses short phrases and the
     (yas-global-mode 1)
 #+end_src
 
-Load the snippets defined in the package's =./snippets/= directory, and local snippets from the =./local-snippets/= directory. 
+Load the snippets defined in the package's =./snippets/= directory, and local snippets from the =./local-snippets/= directory.
 
 #+begin_src emacs-lisp :tangle yes
-  (yas-load-directory (expand-file-name "snippets" dotfiles-dir)) 
+  (yas-load-directory (expand-file-name "snippets" dotfiles-dir))
 #+end_src
 
 #+begin_src emacs-lisp tangle: yes
@@ -49,17 +49,17 @@ Load the snippets defined in the package's =./snippets/= directory, and local sn
 #+end_src
 
 ** Company Mode
-Auto-completion of text and code. 
+Auto-completion of text and code.
 
 We use the `:with` keyword to include dabbrev in every backend, which gives us completion from everything that's in the buffer (and other open buffers).
 
 #+source: company-mode
-#+begin_src emacs-lisp 
+#+begin_src emacs-lisp
 
-;;Use C-TAB to complete. We put this in eval-after-load 
+;;Use C-TAB to complete. We put this in eval-after-load
 ;; because otherwise some modes will try to override our settings.
 (require 'company)
-;; set to 0 to prevent completion starting automatically 
+;; set to 0 to prevent completion starting automatically
 ;; (setq company-idle-delay 0)
 ;; cancel if input doesn't match
 (setq company-require-match nil)
@@ -104,16 +104,16 @@ We use company mode, as initiated above, but here's a working auto-complete setu
   (require 'auto-complete-config)
   (global-auto-complete-mode t)
   (add-to-list 'ac-dictionary-directories (expand-file-name "auto-complete" dotfiles-dir))
-  (setq ac-modes (append ac-modes '(org-mode))) 
+  (setq ac-modes (append ac-modes '(org-mode)))
   (ac-config-default)
   (define-key ac-complete-mode-map [tab] 'ac-expand)
   (setq ac-auto-start 4)
   (ac-flyspell-workaround)
   (define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
-  (define-key ac-completing-map (kbd "C-c h") 'ac-quick-help)  
+  (define-key ac-completing-map (kbd "C-c h") 'ac-quick-help)
   (add-hook 'html-mode-hook 'ac-html-enable)
 
-#+end_src 
+#+end_src
 
 
 #+source: message-line

@@ -2,12 +2,12 @@
 ;; ----- smex-history -----
 (
  starter-kit-compile
+ load-file
  customize-themes
  global-display-line-numbers-mode
  package-install
  package-list-packages
  package-autoremove
- eval-buffer
 )
 
 ;; ----- smex-data -----
@@ -16,13 +16,13 @@
  (list-packages . 3)
  (customize-themes . 5)
  (imenu . 7)
- (starter-kit-compile . 7)
+ (starter-kit-compile . 9)
  (term . 1)
  (magit . 2)
  (auto-fill-mode . 2)
  (package-install . 11)
  (drag-stuff-mode . 1)
- (load-file . 9)
+ (load-file . 10)
  (projectile-mode . 2)
  (projectile-commander . 1)
  (zotero-cayw . 3)

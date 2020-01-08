@@ -6,14 +6,15 @@ This is part of the [[file:starter-kit.org][Emacs Starter Kit]].
 * Starter Kit aspell
 Hackish file to accommodate having aspell installed on your Mac. Otherwise
 flyspell doesn't start properly. Putting this customization in
-<username>.org initiates it too late. 
+<username>.org initiates it too late.
 
-- This file is loaded by a special line added to [[file:starter-kit.org][starter-kit.org]]. 
+- This file is loaded by a special line added to [[file:starter-kit.org][starter-kit.org]].
 
 ** Specify aspell
 #+begin_src emacs-lisp
-  (require 'flyspell)
-  (setq ispell-program-name "aspell"
+  (use-package flyspell
+    :init
+    (setq ispell-program-name "aspell"
         ispell-dictionary "english"
         ispell-dictionary-alist
         (let ((default '("[A-Za-z]" "[^A-Za-z]" "[']" nil
@@ -23,16 +24,16 @@ flyspell doesn't start properly. Putting this customization in
             ("english" ,@default))))
   (setq ispell-extra-args '("--sug-mode=ultra"))
   (setq ispell-personal-dictionary "~/.aspell.en.pws")
-  (setq flyspell-issue-message-flag nil)
-  
- 
+  (setq flyspell-issue-message-flag nil))
+
+
 ;; More efforts to speed up flyspell
-;; See http://www.brool.com/index.php/speeding-up-flyspell-region 
+;; See http://www.brool.com/index.php/speeding-up-flyspell-region
   (defadvice flyspell-region (around fast-flyspell-region)
-    (cl-flet ( (sit-for (x) t) ) 
+    (cl-flet ( (sit-for (x) t) )
       ad-do-it))
   (ad-activate 'flyspell-region)
-  
+
 #+end_src
 
 #+source: message-line

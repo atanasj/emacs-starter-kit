@@ -1,7 +1,7 @@
 #+TITLE: Starter Kit Text Editing
 #+OPTIONS: toc:nil num:nil ^:nil
 
-This is part of the [[file:starter-kit.org][Emacs Starter Kit]]. 
+This is part of the [[file:starter-kit.org][Emacs Starter Kit]].
 
 This file provides settings for text-editing modes and formats, including
 Markdown and Pandoc, as well as spellchecking and line-wrapping.
@@ -10,7 +10,7 @@ Markdown and Pandoc, as well as spellchecking and line-wrapping.
 ** Line wrapping and position
     Sane line wrapping and scrolling for long documents and
     papers. Plus a function for removing any hard-returns in a
-    document. 
+    document.
 #+srcname: line-modes
 #+begin_src emacs-lisp
 
@@ -23,7 +23,7 @@ Markdown and Pandoc, as well as spellchecking and line-wrapping.
 
     ;;; prefer auto-fill to visual line wrap in ESS mode
     (add-hook 'ess-mode-hook 'turn-on-auto-fill)
-    (add-hook 'inferior-ess-mode-hook 'turn-on-auto-fill) 
+    (add-hook 'inferior-ess-mode-hook 'turn-on-auto-fill)
 
     ;;; but turn off auto-fill in tex and markdown
     (add-hook 'markdown-mode-hook 'turn-off-auto-fill)
@@ -36,11 +36,11 @@ Markdown and Pandoc, as well as spellchecking and line-wrapping.
     (fill-paragraph nil)))
     (global-set-key (kbd "<f6>") 'unfill-paragraph)
 
-    ;; smooth-scrolling 
+    ;; smooth-scrolling
     (require 'smooth-scrolling)
 
     ;; more smooth efforts.
-    (setq-default 
+    (setq-default
     scroll-conservatively 0
     scroll-up-aggressively 0.01
     scroll-down-aggressively 0.01)
@@ -48,7 +48,7 @@ Markdown and Pandoc, as well as spellchecking and line-wrapping.
     ;; centered-cursor package in src/
     ;; (and
     ;;  (require 'centered-cursor-mode)
-    ;;  (global-centered-cursor-mode +1)) 
+    ;;  (global-centered-cursor-mode +1))
 #+end_src
 
 ** Spelling
@@ -92,16 +92,16 @@ Markdown and Pandoc, as well as spellchecking and line-wrapping.
 #+end_src
 
 ** Smartparens Mode
-   Smart autopairing of quotes and parentheses. 
+   Smart autopairing of quotes and parentheses.
 #+srcname: smartparens
-#+begin_src emacs-lisp 
+#+begin_src emacs-lisp
   (smartparens-global-mode 1)
   (require 'smartparens-config)
   (show-smartparens-global-mode +1)
 #+end_src
 
-** Markdown 
-Markdown mode support. 
+** Markdown
+Markdown mode support.
 
 #+srcname: markdown-mode
 #+begin_src emacs-lisp
@@ -132,8 +132,8 @@ Markdown mode support.
      (shell-command
       (format "open -a /Applications/Marked\\ 2.app %s"
               (shell-quote-argument (buffer-file-name))))
-     )  
-   (global-set-key "\C-co" 'markdown-preview-file) 
+     )
+   (global-set-key "\C-co" 'markdown-preview-file)
 
   (add-hook 'markdown-mode-hook 'latex-unicode-simplified)
 

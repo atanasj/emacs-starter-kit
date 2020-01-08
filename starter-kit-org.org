@@ -23,7 +23,7 @@ HTML and LaTeX exporters are shown by default. We add the Markdown exporter to t
 ;; (org-ac/config-default)
 
 ;; Markdown exporter
-(require 'ox-md)
+(use-package ox-md)
 
 (setq org-completion-use-ido t)
 ;; (require 'org-special-blocks)
@@ -154,8 +154,9 @@ Org-mode manual is available to the =info= command (bound to =C-h i=).
 ** Nice Bulleted Lists
 #+name: org-bullets
 #+begin_src emacs-lisp :tangle no
-  (require 'org-bullets)
-  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+  (use-package org-bullets
+  :init
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 #+end_src
 
 #+source: message-line

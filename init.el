@@ -32,7 +32,7 @@
       ;; (setq load-path (cons my-lisp-dir load-path))
       (normal-top-level-add-subdirs-to-load-path)))
 
- (server-start); start emacs in server mode
+ (server-start) ; start emacs in server mode
 
 
 ;; Font-face setup. Check the availability of a some default fonts, in
@@ -53,7 +53,7 @@
 (cond
  ((eq window-system nil) nil)
  ((font-existsp "Source Code Pro")
-  (set-face-attribute 'default nil :height 121 :font "Source Code Pro")) ; moved order
+  (set-face-attribute 'default nil :height 125 :font "Source Code Pro")) ; moved order
  ((font-existsp "PragmataPro")
   (set-face-attribute 'default nil :height 131 :font "PragmataPro"))
  ((font-existsp "Input Mono Compressed")
@@ -76,7 +76,7 @@
 ;; if float (e.g 0.02): a scaling factor relative to current window's default line height.
 ;; if nil: add no extra spacing.
 
-(setq-default line-spacing 0.06) ;; tuned for Pragmata Pro
+(setq-default line-spacing 0.10) ;; tuned for Pragmata Pro
 
 
 ;; Load up Org Mode and Babel

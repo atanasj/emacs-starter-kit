@@ -7,8 +7,8 @@ This is part of the [[file:starter-kit.org][Emacs Starter Kit]].
 Function definitions
 
 #+begin_src emacs-lisp
-(require 'thingatpt)
-(require 'imenu)
+(use-package thingatpt)
+(use-package imenu)
 #+end_src
 
 ** Network

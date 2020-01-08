@@ -1,18 +1,18 @@
 #+TITLE: Starter Kit Statistics
 #+OPTIONS: toc:nil num:nil ^:nil
 
-This is part of the [[file:starter-kit.org][Emacs Starter Kit]]. 
+This is part of the [[file:starter-kit.org][Emacs Starter Kit]].
 
-This file provides settings for ESS and R. 
+This file provides settings for ESS and R.
 
 * R and ESS
    Load ESS: Emacs Speaks Statistics, and several further tweaks for
- R. 
- 
-** Load ESS 
+ R.
+
+** Load ESS
 #+src-name: ess-mode
 #+begin_src emacs-lisp
-  (require 'ess-site)
+  (use-package ess-site)
 
 ;; smart-underscore and ess-smart-S-assign-key have been removed in ESS 19.04 so we need to set them up manually
   (define-key ess-r-mode-map "_" #'ess-insert-assign)
@@ -26,7 +26,7 @@ This file provides settings for ESS and R.
   (add-hook 'ess-R-post-run-hook 'smartparens-mode)
 #+end_src
 
-** Define Rnw-mode and make LaTeX aware of it. 
+** Define Rnw-mode and make LaTeX aware of it.
 If you use Rnw documents, tangle this section. (Rnw files have been mostly superseded by Rmd files.)
 #+srcname: misc-r
 #+begin_src emacs-lisp :tangle no
@@ -58,14 +58,14 @@ If you use Rnw documents, tangle this section. (Rnw files have been mostly super
 #+begin_src emacs-lisp
   (setq ess-swv-processor "'knitr")
 #+end_src
- 
-** Use Polymode 
+
+** Use Polymode
 Polymode is a package that supports multiple modes inside a single buffer. It is aimed particularly at literate programming approaches and supports, e.g., R and markdown in a single =.Rmd= file. So it is very useful with knitr in R.
 
 #+source: Polymode
-#+begin_src emacs-lisp 
-  (require 'poly-R)
-  (require 'poly-markdown)
+#+begin_src emacs-lisp
+  (use-package poly-R)
+  (use-package poly-markdown)
 #+end_src
 
 ** Make shift-enter to a lot in ESS.
@@ -73,7 +73,7 @@ Polymode is a package that supports multiple modes inside a single buffer. It is
  highlighted region (if R running & area highlighted), or execute
  current line (and move to next line, skipping comments). Nice. See
  http://www.emacswiki.org/emacs/EmacsSpeaksStatistics,
- FelipeCsaszar. Adapted to split vertically instead of horizontally. 
+ FelipeCsaszar. Adapted to split vertically instead of horizontally.
 #+src-name: ess-shift-enter
 #+begin_src emacs-lisp
 (setq ess-ask-for-ess-directory nil)
@@ -107,10 +107,10 @@ Polymode is a package that supports multiple modes inside a single buffer. It is
 	    '(lambda()
 	       (local-set-key [C-up] 'comint-previous-input)
 	       (local-set-key [C-down] 'comint-next-input)))
- (add-hook 'Rnw-mode-hook 
-          '(lambda() 
-             (local-set-key [(shift return)] 'my-ess-eval))) 
-  (require 'ess-site)
+ (add-hook 'Rnw-mode-hook
+          '(lambda()
+             (local-set-key [(shift return)] 'my-ess-eval)))
+  (use-package ess-site)
 #+end_src
 
 ** Add a Keyboard Shortcut for the Pipe Operator
@@ -137,10 +137,10 @@ Assignment in ESS is shift-minus; by extension we'll use M-shift-minus for inser
 #+BEGIN_SRC emacs-lisp
 
 ;;;Insert new chunk for Rmarkdown
-(defun kjh-insert-r-chunk (header) 
-  "Insert an r-chunk in markdown mode." 
-  (interactive "sLabel: ") 
-  (insert (concat "```{r " header "}\n\n```")) 
+(defun kjh-insert-r-chunk (header)
+  "Insert an r-chunk in markdown mode."
+  (interactive "sLabel: ")
+  (insert (concat "```{r " header "}\n\n```"))
   (forward-line -1))
 
 (global-set-key (kbd "C-c i") 'kjh-insert-r-chunk)
@@ -148,18 +148,19 @@ Assignment in ESS is shift-minus; by extension we'll use M-shift-minus for inser
 #+END_SRC
 
 ** Uniquify Buffer Names
-This is useful for when you have buffers with many similar names, as when there are various open files from different folders named =analysis.R= or similar. 
+This is useful for when you have buffers with many similar names, as when there are various open files from different folders named =analysis.R= or similar.
 
 #+source: uniquify
 #+begin_src emacs-lisp
-  (require 'uniquify)
-  (setq uniquify-buffer-name-style 'post-forward-angle-brackets)  
+  (use-package uniquify
+  :config
+  (setq uniquify-buffer-name-style 'post-forward-angle-brackets))
 #+end_src
 ** lintr and flycheck
 [[https://github.com/jimhester/lintr][lintr]] checks your R code for style and syntax errors. It's an R library that integrates with [[http://www.flycheck.org][flycheck]]. You must install lintr from R. Flycheck can also check code in many other languages. You will need to install linters for them separately as well. See the flycheck documentation for details.
 
 #+source: lintr
-#+begin_src emacs-lisp 
+#+begin_src emacs-lisp
   (add-hook 'after-init-hook #'global-flycheck-mode)
     (add-hook 'ess-mode-hook
               (lambda () (flycheck-mode t)))
